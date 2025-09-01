@@ -20,7 +20,7 @@
   # Wayland/Hyprland - These often benefit from being on the latest version
   hyprland = inputs.nixpkgs-unstable.legacyPackages.${prev.system}.hyprland;
   waybar = inputs.nixpkgs-unstable.legacyPackages.${prev.system}.waybar;
-  ags = inputs.nixpkgs-unstable.legacyPackages.${prev.system}.ags;
+  # ags = inputs.nixpkgs-unstable.legacyPackages.${prev.system}.ags;
 
   # Modern CLI tools
   zellij = inputs.nixpkgs-unstable.legacyPackages.${prev.system}.zellij;
