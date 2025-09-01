@@ -42,6 +42,37 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
+  fileSystems."/mnt/shared" = {
+    device = "/dev/disk/by-uuid/58B5752B7D7FBBAE";
+    fsType = "ntfs";
+    options = [
+      "defaults"
+      "noatime"
+      "nofail"
+      "uid=1000"
+      "gid=100"
+      "umask=002"
+    ];
+  };
+
+  fileSystems."/mnt/steam" = {
+    device = "/dev/disk/by-uuid/76E0774A69AAECB4";
+    fsType = "ntfs";
+    options = [
+      "defaults"
+      "noatime"
+      "nofail"
+      "uid=1000"
+      "gid=100"
+      "umask=002"
+    ];
+  };
+
+  systemd.tmpfiles.rules = [
+    "d /mnt/shared 0755 devgrohl users -"
+    "d /mnt/steam 0755 devgrohl users -"
+  ];
+
   # This value determines the NixOS release from which the default
   # settings for stateful data were taken. It‘s perfectly fine and recommended to leave
   # this value at the release version of the first install of this system.
