@@ -12,10 +12,10 @@
   # Gaming Packages
   steam = inputs.nixpkgs-unstable.legacyPackages.${prev.system}.steam;
   mangohud = inputs.nixpkgs-unstable.legacyPackages.${prev.system}.mangohud;
-  gamemode = inputs.nixpkgs-unstable.legacyPackages.${prev.system}.gamemode;
-  gamescope = inputs.nixpkgs-unstable.legacyPackages.${prev.system}.gamescope;
-  lutris = inputs.nixpkgs-unstable.legacyPackages.${prev.system}.lutris;
-  heroic-games-launcher-bin = inputs.nixpkgs-unstable.legacyPackages.${prev.system}.heroic-games-launcher-bin;
+  # gamemode = inputs.nixpkgs-unstable.legacyPackages.${prev.system}.gamemode;
+  # gamescope = inputs.nixpkgs-unstable.legacyPackages.${prev.system}.gamescope;
+  # lutris = inputs.nixpkgs-unstable.legacyPackages.${prev.system}.lutris;
+  # heroic-games-launcher-bin = inputs.nixpkgs-unstable.legacyPackages.${prev.system}.heroic-games-launcher-bin;
 
   # Wayland/Hyprland - These often benefit from being on the latest version
   hyprland = inputs.nixpkgs-unstable.legacyPackages.${prev.system}.hyprland;
@@ -25,5 +25,6 @@
   # Modern CLI tools
   zellij = inputs.nixpkgs-unstable.legacyPackages.${prev.system}.zellij;
   eza = inputs.nixpkgs-unstable.legacyPackages.${prev.system}.eza;
+  mako = inputs.nixpkgs-unstable.legacyPackages.${prev.system}.mako;
 
 })

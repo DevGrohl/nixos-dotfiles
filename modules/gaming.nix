@@ -15,13 +15,13 @@
 
   # Install other gaming-related packages
   environment.systemPackages = with pkgs; [
-    lutris
-    heroic-games-launcher-bin
-    gamemode
+    # lutris
+    # heroic-games-launcher-bin
+    # gamemode
     mangohud
-    gamescope
+    # gamescope
 
     # Add other tools like protontricks if needed
-    # protontricks
+    protontricks
   ];
 }
