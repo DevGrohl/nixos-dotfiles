@@ -30,8 +30,8 @@
     zellij
 
     # Packages for Zsh plugins
-    zsh-completions
-    zsh-you-should-use
+    # zsh-completions
+    # zsh-you-should-use
 
     # Add any other user-specific packages here
   ];
@@ -41,8 +41,8 @@
 
   programs.zsh = {
     enable = true;
-    enableAutosuggestions = true;      # For zsh-autosuggestions plugin
-    enableSyntaxHighlighting = true; # For zsh-syntax-highlighting plugin
+    autosuggestion.enable = true;      # For zsh-autosuggestions plugin
+    syntaxHighlighting.enable = true; # For zsh-syntax-highlighting plugin
 
     oh-my-zsh = {
       enable = true;
