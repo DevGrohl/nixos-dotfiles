@@ -29,9 +29,9 @@
 
   # NVIDIA Drivers
   services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport32Bit = true; # Crucial for Steam and many games
+    enable32Bit = true; # Crucial for Steam and many games
   };
   hardware.nvidia = {
     modesetting.enable = true;

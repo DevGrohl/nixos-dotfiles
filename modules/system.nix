@@ -32,8 +32,8 @@
   };
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
 
   # Enable sound with pipewire.
   security.rtkit.enable = true;
@@ -69,7 +69,10 @@
   fonts.packages = with pkgs; [
     font-awesome
     fira-code
-    (nerd-fonts.override { fonts = [ "FiraCode" "JetBrainsMono" "Hack" "0xProto" ]; })
+    nerd-fonts.fira-code
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.hack
+    nerd-fonts._0xproto
     noto-fonts-emoji
   ];
 
