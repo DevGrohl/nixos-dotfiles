@@ -22,7 +22,7 @@
     btop
     duf
     cliphist
-    mako
+    # mako # Temporarily commented out to fix build
     eza
     ripgrep
     pulsemixer

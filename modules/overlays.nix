@@ -25,6 +25,6 @@
   # Modern CLI tools
   zellij = inputs.nixpkgs-unstable.legacyPackages.${prev.system}.zellij;
   eza = inputs.nixpkgs-unstable.legacyPackages.${prev.system}.eza;
-  mako = inputs.nixpkgs-unstable.legacyPackages.${prev.system}.mako;
+  # mako = inputs.nixpkgs-unstable.legacyPackages.${prev.system}.mako;
 
 })
