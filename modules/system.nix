@@ -48,11 +48,14 @@
   # Enable printing
   services.printing.enable = true;
 
+  # --- VIRTUALISATION ---
+  virtualisation.docker.enable = true;
+
   # --- USERS ---
   users.users.devgrohl = {
     isNormalUser = true;
     description = "DevGrohl";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     initialPassword = "redkoi0.";
     shell = pkgs.zsh;
   };
