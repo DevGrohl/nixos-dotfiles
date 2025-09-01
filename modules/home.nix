@@ -29,40 +29,69 @@
     rofi
     zellij
 
+    # Packages for Zsh plugins
+    zsh-completions
+    zsh-you-should-use
+
     # Add any other user-specific packages here
   ];
 
   # --- PROGRAM CONFIGURATION ---
   # Use Home Manager to declaratively configure your programs.
 
+  programs.zsh = {
+    enable = true;
+    enableAutosuggestions = true;      # For zsh-autosuggestions plugin
+    enableSyntaxHighlighting = true; # For zsh-syntax-highlighting plugin
+
+    oh-my-zsh = {
+      enable = true;
+      theme = "robbyrussell";
+      plugins = [
+        "git"
+        "docker"
+        "archlinux"
+        "z"
+      ];
+    };
+
+    shellAliases = {
+      v = "nvim";
+      conf_zsh = "v ~/nixos-config/modules/home.nix"; # Updated to point to new config
+      conf_ohmyzsh = "v ~/nixos-config/modules/home.nix"; # Updated to point to new config
+      ls = "eza";
+      duf = "duf -hide special";
+      "." = "cd ..";
+      ".." = "cd ../..";
+      "..." = "cd ../../..";
+      "...." = "cd ../../../..";
+      "....." = "cd ../../../../..";
+      dcpsa = "docker container ps -a";
+      dcbw = "docker compose up --build --watch";
+      dcdv = "docker compose down -v";
+      hgrep = "history | grep";
+      la = "ls -a";
+      llah = "ls -lah";
+      ":q" = "exit";
+    };
+  };
+
+  # Declarative Starship prompt configuration
+  programs.starship = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  # Declarative FZF configuration
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
   programs.neovim = {
     enable = true;
     defaultEditor = true;
     # You can add plugins and further config here
-  };
-
-  programs.firefox = {
-    enable = true;
-    # You can configure firefox settings and extensions here
-  };
-
-  programs.zsh = {
-    enable = true;
-    # The shellAliases will be added back in a later step.
-    # shellAliases = {
-    #   ll = "eza -l";
-    #   la = "eza -la";
-    #   update = "sudo nixos-rebuild switch";
-    # };
-  };
-
-  # Example for Alacritty - you can move your config here
-  programs.alacritty = {
-    enable = true;
-    # settings = {
-    #   window.opacity = 0.9;
-    #   font.normal.family = "FiraCode Nerd Font";
-    # };
   };
 
   # Let Home Manager manage itself
