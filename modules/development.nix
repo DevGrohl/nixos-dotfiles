@@ -11,11 +11,8 @@
     python3Full
     rustc
     rustup
-    gcc # C/C++ compiler
-
-    # You can add other dev tools here, for example:
-    # docker
-    # go
-    # lazygit
+    gcc 
+    go
+    lazygit
   ];
 }
