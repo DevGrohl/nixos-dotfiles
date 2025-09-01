@@ -2,21 +2,18 @@
   description = "DevGrohl's NixOS Flake";
 
   inputs = {
-    # Your primary, stable package source
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
-
-    # A secondary, unstable package source for specific packages
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    # Your primary, unstable package source
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     # Home Manager for managing user-level packages and dotfiles
     home-manager = {
       url = "github:nix-community/home-manager";
-      # Make Home Manager follow the stable channel
+      # Make Home Manager follow the unstable channel
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
     nixosConfigurations = {
       # Your hostname
       nixos = nixpkgs.lib.nixosSystem {

@@ -17,9 +17,6 @@
     ./modules/gaming.nix
   ];
 
-  # Apply the overlay from the separate file
-  nixpkgs.overlays = [ (import ./modules/overlays.nix { inherit inputs; }) ];
-
   # --- HOST-SPECIFIC CONFIGURATION ---
   # These settings are specific to this machine.
 

@@ -12,7 +12,7 @@
   # All your personal applications go here.
   home.packages = with pkgs; [
     # Your original packages
-    # ags_1
+    ags_1
     fzf
     gemini-cli
     thunderbird
@@ -22,7 +22,7 @@
     btop
     duf
     cliphist
-    # mako # Temporarily commented out to fix build
+    mako
     eza
     ripgrep
     pulsemixer

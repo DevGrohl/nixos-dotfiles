@@ -60,10 +60,10 @@
   # --- PROGRAMS ---
   # Enable system-wide programs. User-specific ones are in home.nix
   programs.zsh.enable = true;
-  # programs.hyprland = {
-  #   enable = true;
-  #   xwayland.enable = true;
-  # };
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
 
   # --- FONTS ---
   fonts.packages = with pkgs; [
