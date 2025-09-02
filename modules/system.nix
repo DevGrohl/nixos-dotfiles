@@ -97,6 +97,7 @@
   # Most of your packages should be in home.nix. Only put essential
   # system-level tools here.
   environment.systemPackages = with pkgs; [
+    corectrl
     bibata-cursors
     git
     neovim
