@@ -103,6 +103,13 @@
     wget
     wl-clipboard-rs # For wayland clipboard support
     gemini-cli
+    hyprlock
+    pavucontrol
+    pamixer
+    playerctl
+    libnotify
+    blueman
+    bc
   ];
 
   environment.variables = {

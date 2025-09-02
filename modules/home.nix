@@ -31,12 +31,6 @@
     waybar
     wlogout
     envsubst
-
-    # Packages for Zsh plugins
-    # zsh-completions
-    # zsh-you-should-use
-
-    # Add any other user-specific packages here
   ];
 
   # --- PROGRAM CONFIGURATION ---
