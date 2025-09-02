@@ -63,6 +63,7 @@
   # --- PROGRAMS ---
   # Enable system-wide programs. User-specific ones are in home.nix
   programs.zsh.enable = true;
+  programs.firefox.enable = true;
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -96,9 +97,16 @@
   # Most of your packages should be in home.nix. Only put essential
   # system-level tools here.
   environment.systemPackages = with pkgs; [
+    bibata-cursors
     git
-    vim
+    neovim
     wget
     wl-clipboard-rs # For wayland clipboard support
+    gemini-cli
   ];
+
+  environment.variables = {
+    XCURSOR_THEME = "Bibata-Modern-Classic";
+    XCURSOR_SIZE = "24";
+  };
 }

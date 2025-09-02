@@ -68,9 +68,24 @@
     ];
   };
 
+
+  fileSystems."/mnt/arch" = {
+    device = "/dev/disk/by-uuid/fa68aa26-1acc-43bd-af6b-5f0a6ae66dac";
+    fsType = "ext4";
+    options = [
+      "defaults"
+      "noatime"
+      "nofail"
+      # "uid=1000"
+      # "gid=100"
+      # "umask=002"
+    ];
+  };
+
   systemd.tmpfiles.rules = [
     "d /mnt/shared 0755 devgrohl users -"
-    "d /mnt/steam 0755 devgrohl users -"
+    "d /mnt/steam  0755 devgrohl users -"
+    "d /mnt/arch   0755 devgrohl users -"
   ];
 
   # This value determines the NixOS release from which the default

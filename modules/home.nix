@@ -28,6 +28,9 @@
     pulsemixer
     rofi
     zellij
+    waybar
+    wlogout
+    envsubst
 
     # Packages for Zsh plugins
     # zsh-completions
@@ -93,6 +96,14 @@
     defaultEditor = true;
     # You can add plugins and further config here
   };
+
+  # home.pointerCursor = {
+  #   name = "Bibata-Modern-Classic";
+  #   package = pkgs.bibata-cursors;
+  #   size = 24;
+  #   gtk.enable = true;
+  #   x11.enable = true;
+  # };
 
   # Let Home Manager manage itself
   programs.home-manager.enable = true;

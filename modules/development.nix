@@ -14,5 +14,6 @@
     gcc 
     go
     lazygit
+    jq
   ];
 }
