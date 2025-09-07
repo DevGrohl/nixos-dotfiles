@@ -3,10 +3,18 @@
 {
   config,
   pkgs,
+  system,
+  inputs,
   ...
 }: {
   # Set the state version for Home Manager
   home.stateVersion = "24.05";
+
+  imports = [
+    inputs.zen-browser.homeModules.beta
+  ];
+
+  programs.zen-browser.enable = true;
 
   # --- PACKAGES ---
   # All your personal applications go here.
@@ -31,10 +39,11 @@
     waybar
     wlogout
     envsubst
+    superfile
+    spotify
+    clapper
+    transmission_4-qt6
   ];
-
-  # --- PROGRAM CONFIGURATION ---
-  # Use Home Manager to declaratively configure your programs.
 
   programs.zsh = {
     enable = true;
@@ -88,16 +97,7 @@
   programs.neovim = {
     enable = true;
     defaultEditor = true;
-    # You can add plugins and further config here
   };
-
-  # home.pointerCursor = {
-  #   name = "Bibata-Modern-Classic";
-  #   package = pkgs.bibata-cursors;
-  #   size = 24;
-  #   gtk.enable = true;
-  #   x11.enable = true;
-  # };
 
   # Let Home Manager manage itself
   programs.home-manager.enable = true;

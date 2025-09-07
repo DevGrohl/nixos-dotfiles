@@ -42,6 +42,8 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+
   fileSystems."/mnt/shared" = {
     device = "/dev/disk/by-uuid/58B5752B7D7FBBAE";
     fsType = "ntfs";

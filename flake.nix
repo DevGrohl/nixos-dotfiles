@@ -2,18 +2,18 @@
   description = "DevGrohl's NixOS Flake";
 
   inputs = {
-    # Your primary, unstable package source
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-
-    # Home Manager for managing user-level packages and dotfiles
     home-manager = {
       url = "github:nix-community/home-manager";
-      # Make Home Manager follow the unstable channel
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, zen-browser, ... } @ inputs: {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -27,7 +27,10 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "bckp";
-            home-manager.users.devgrohl = import ./modules/home.nix;
+            home-manager.users.devgrohl.imports = [
+              ./modules/home.nix
+            ];
+            home-manager.extraSpecialArgs = { inherit inputs; system = "x86_64-linux";};
           }
         ];
       };

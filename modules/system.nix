@@ -103,11 +103,17 @@
     neovim
     wget
     wl-clipboard-rs # For wayland clipboard support
+    grimblast
+    grim
+    slurp
+    swappy
     gemini-cli
     hyprlock
+    hyprpaper
     pavucontrol
     pamixer
     playerctl
+    easyeffects
     libnotify
     blueman
     bc
