@@ -44,6 +44,14 @@
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
+
+  programs.nix-ld.enable = true;
+  # programs.nix-ld.libraries = with pkgs; [
+  #   ruff
+  #   black
+  #   uv
+  # ];
+
   fileSystems."/mnt/shared" = {
     device = "/dev/disk/by-uuid/58B5752B7D7FBBAE";
     fsType = "ntfs";
@@ -58,15 +66,12 @@
   };
 
   fileSystems."/mnt/steam" = {
-    device = "/dev/disk/by-uuid/76E0774A69AAECB4";
-    fsType = "ntfs";
+    device = "/dev/disk/by-uuid/38dcf831-59ff-4f92-95fb-7bb5c1587751";
+    fsType = "ext4";
     options = [
       "defaults"
       "noatime"
       "nofail"
-      "uid=1000"
-      "gid=100"
-      "umask=002"
     ];
   };
 
@@ -78,9 +83,6 @@
       "defaults"
       "noatime"
       "nofail"
-      # "uid=1000"
-      # "gid=100"
-      # "umask=002"
     ];
   };
 

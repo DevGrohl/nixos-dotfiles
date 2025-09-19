@@ -3,10 +3,14 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: {
   # Use latest kernel (from your stable channel).
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  # Enable bluetooth
+  hardware.bluetooth.enable = true;
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -19,6 +23,15 @@
 
   # Allow unfree packages (needed for NVIDIA, Steam, etc.)
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "steam"
+    "steam-original"
+    "steam-unwrapped"
+    "steam-run"
+  ];
+
+  # Enable flatpak (Steam Link)
+  services.flatpak.enable = true;
 
   # --- SERVICES ---
   # Enable the X11 windowing system and desktop environments.
@@ -107,7 +120,6 @@
     grim
     slurp
     swappy
-    gemini-cli
     hyprlock
     hyprpaper
     pavucontrol
@@ -117,6 +129,7 @@
     libnotify
     blueman
     bc
+    unzip
   ];
 
   environment.variables = {

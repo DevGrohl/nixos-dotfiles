@@ -43,7 +43,24 @@
     spotify
     clapper
     transmission_4-qt6
+    obsidian
+    nodejs
   ];
+
+  programs.zsh.initExtra = ''
+    export PATH="${config.home.homeDirectory}/.npm-global/bin:$PATH"
+  '';
+
+  home.activation = {
+    installAuggie = ''
+      export NPM_CONFIG_PREFIX="${config.home.homeDirectory}/.npm-global"
+      $DRY_RUN_CMD ${pkgs.nodejs}/bin/npm install -g @augmentcode/auggie
+    '';
+  };
+
+  services.cliphist = {
+    enable = true;
+  };
 
   programs.zsh = {
     enable = true;

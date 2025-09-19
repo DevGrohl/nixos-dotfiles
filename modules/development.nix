@@ -8,12 +8,18 @@
   environment.systemPackages = with pkgs; [
     # Languages and Toolchains
     nodejs_24
-    python3Full
+    python3
     rustc
     rustup
     gcc 
     go
     lazygit
     jq
+    opencode
+    gemini-cli
+    rainfrog
+    hoppscotch
+    uv
   ];
+
 }

@@ -13,15 +13,21 @@
     localNetworkGameTransfers.openFirewall = true;
   };
 
+  programs.steam.gamescopeSession.enable = true;
+  programs.gamemode.enable = true;
+
   # Install other gaming-related packages
   environment.systemPackages = with pkgs; [
     # lutris
     # heroic-games-launcher-bin
     # gamemode
     mangohud
-    # gamescope
-
+    gamescope
+    streamlink
+    obs-studio
     # Add other tools like protontricks if needed
     protontricks
   ];
+
+  # programs.steam.gamescopeSession.enable = true;
 }
