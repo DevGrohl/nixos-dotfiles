@@ -29,6 +29,7 @@
     nvtopPackages.full
     btop
     duf
+    clipman
     cliphist
     mako
     eza
@@ -60,7 +61,9 @@
 
   services.cliphist = {
     enable = true;
+    systemdTarget = "graphical-session.target";
   };
+  
 
   programs.zsh = {
     enable = true;
